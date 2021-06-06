@@ -11,3 +11,5 @@
 
 - Training accuracy: 90.11 %
 - Test accuracy: 88.27 %
+
+![image](Visualizations/Confusion_Matrix.png)
