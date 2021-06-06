@@ -3,7 +3,7 @@
 This repository compare models used to recognize letters from images via performance (training time, accuracy). 
 The models are coded from scratch in Matlab programming language.
 
-Available models:
+## Available models:
 
 - Neural Network - v1:
   - 1 input layer (784 units)
