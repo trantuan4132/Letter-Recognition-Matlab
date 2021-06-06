@@ -5,6 +5,8 @@
 - 100 iterations for 26 minutes (CPU)
 - 15.6s per iteration
 
+![image](Visualizations/Loss_per_iterations.png)
+
 ## Accuracy:
 
 - Training accuracy: 90.11 %
