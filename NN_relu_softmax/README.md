@@ -7,13 +7,13 @@
 
 ## Loss: 
 
-- 3.501554e-01 - Categorical Cross-Entropy Loss
+- 3.501554e-01 -- Categorical Cross-Entropy Loss
 
 ![image](Visualizations/Loss_per_iterations.png)
 
 ## Accuracy:
 
-- 90.11 % - Training accuracy
-- 88.27 % - Test accuracy
+- 90.11 % -- Training accuracy
+- 88.27 % -- Test accuracy
 
 ![image](Visualizations/Confusion_Matrix.png)
