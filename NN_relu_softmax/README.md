@@ -7,7 +7,7 @@
 
 ## Loss: 
 
-- Loss: ~0.35 (Binary Cross-Entropy Loss)
+- Categorical Cross-Entropy Loss: 3.501554e-01 
 
 ![image](Visualizations/Loss_per_iterations.png)
 
