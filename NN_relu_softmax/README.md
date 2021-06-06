@@ -2,8 +2,12 @@
 
 ## Training time: 
 
-- 100 iterations for 26 minutes (CPU)
-- 15.6s per iteration
+- 100 iterations for ~26 minutes (CPU)
+- 15.6s per iteration on average
+
+## Loss: 
+
+- Loss: ~0.35 (Binary Cross-Entropy Loss)
 
 ![image](Visualizations/Loss_per_iterations.png)
 
