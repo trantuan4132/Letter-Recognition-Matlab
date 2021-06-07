@@ -59,7 +59,7 @@ Theta2 = reshape(nn_params((1 + (hidden_layer_size * (input_layer_size + 1))):en
                  num_labels, (hidden_layer_size + 1));
 
 % Save Model Weights
-save('NN_relu_softmax_weights.mat', 'Theta1', 'Theta2');
+%save('NN_relu_softmax_weights.mat', 'Theta1', 'Theta2');
 
 %% ================= Part 5: Visualize Training Loss =================
 
