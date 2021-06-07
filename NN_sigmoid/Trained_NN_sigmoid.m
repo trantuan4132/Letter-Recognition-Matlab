@@ -30,7 +30,7 @@ addTitle(conf_matrix, 'Confusion Matrix');
 addXLabel(conf_matrix, 'Predicted label');
 addYLabel(conf_matrix, 'True label');
 plot(conf_matrix);
-saveas(gcf, 'Visualizations/Confusion_Matrix', 'fig');
+%saveas(gcf, 'Visualizations/Confusion_Matrix', 'fig');
 
 fprintf('Program paused. Press enter to continue.\n');
 pause;

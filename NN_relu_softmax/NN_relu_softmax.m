@@ -68,7 +68,7 @@ plot(cost);
 title('Loss per iterations');
 xlabel('Number of iterations'); 
 ylabel('Loss');
-saveas(gcf, 'Visualizations/Loss_per_iterations', 'fig');
+%saveas(gcf, 'Visualizations/Loss_per_iterations', 'fig');
 
 fprintf('Program paused. Press enter to continue.\n');
 pause;
