@@ -1,6 +1,6 @@
 # Neural Network - v1
 
-# Architecture: 
+## Architecture: 
 
 - 1 input layer (784 units)
 - 1 hidden layer (512 units, sigmoid activation)

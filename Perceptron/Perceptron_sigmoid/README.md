@@ -1,6 +1,6 @@
 # Perceptron
 
-# Architecture:
+## Architecture:
 
 - 1 input layer (784 units)
 - 1 output layer (26 units, sigmoid activation)

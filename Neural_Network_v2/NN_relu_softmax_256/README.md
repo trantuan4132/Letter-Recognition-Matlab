@@ -1,6 +1,6 @@
 # Neural Network - v2
 
-# Architecture:
+## Architecture:
 
 - 1 input layer (784 units)
 - 1 hidden layer (256 units, relu activation)
