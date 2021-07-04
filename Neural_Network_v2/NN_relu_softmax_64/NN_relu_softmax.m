@@ -13,7 +13,15 @@ y_test = dataset.('test').('labels');
 sel = randperm(size(X_train, 1));
 sel = sel(1:100);
 
+% Display sample data
 displayData(X_train(sel, :));
+
+% Plot data distribution
+figure();
+bar([histc(y_train, 1:26) histc(y_test, 1:26)], 'stacked');
+legend('Training Set', 'Test Set');
+xlabel('Class');
+ylabel('Count');
 
 % Rescale both training and test set
 X_train = X_train / 255;
@@ -24,7 +32,7 @@ pause;
 
 %% =================== Part 2: Define NN Parameters ===================
 
-input_layer_size = 784;    % 28x28 Input Images of Digits
+input_layer_size = 784;    % 28x28 Input Images 
 hidden_layer_size = 64;    % 64 hidden units
 num_labels = 26;           % 26 labels, from A to Z  
 lambda = 1;                % Regularization parameter
@@ -35,21 +43,28 @@ initial_Theta1 = randInitializeWeights(input_layer_size, hidden_layer_size);
 initial_Theta2 = randInitializeWeights(hidden_layer_size, num_labels);
 
 % Unroll parameters
-initial_nn_params = [initial_Theta1(:) ; initial_Theta2(:)];
+nn_params = [initial_Theta1(:) ; initial_Theta2(:)];
 
 %% =================== Part 4: Training NN ===================
 
 fprintf('\nTraining Neural Network... \n');
 
-% Create "short hand" for the cost function to be minimized
-costFunction = @(p) nnCostFunction(p, ...
-                                   input_layer_size, ...
-                                   hidden_layer_size, ...
-                                   num_labels, X_train, y_train, lambda);
+alpha = 0.5;                  % Learning rate
+num_iters = 500;              % Number of iterations
+cost = zeros(1, num_iters);   % History of cost function's output
 
-% Minimize cost function 
-options = optimset('MaxIter', 100);
-[nn_params, cost] = fmincg(costFunction, initial_nn_params, options);
+for i = 1:num_iters
+    % Compute cost and gradient
+    [cost(i), grad] = nnCostFunction(nn_params, ...
+                                     input_layer_size, ...
+                                     hidden_layer_size, ...
+                                     num_labels, X_train, y_train, lambda);                               
+    % Print cost
+    fprintf('Iteration %4i | Cost: %4.6e\r', i, cost(i));
+                                
+    % Update model weights
+    nn_params = nn_params - alpha * grad;
+end
 
 % Obtain Theta1 and Theta2 back from nn_params
 Theta1 = reshape(nn_params(1:hidden_layer_size * (input_layer_size + 1)), ...

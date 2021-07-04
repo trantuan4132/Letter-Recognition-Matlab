@@ -7,18 +7,18 @@
 
 ## Training time: 
 
-- 100 iterations for ~3 minutes (CPU)
-- 1.8s per iteration on average
+- 500 iterations for ~17 minutes (CPU)
+- 2.04s per iteration on average
 
 ## Loss:
 
-- 1.790946e+00 -- Binary Cross-Entropy Loss
+- 2.002057e+00 -- Binary Cross-Entropy Loss
 
 ![image](Visualizations/Loss_per_iterations.png)
 
 ## Accuracy:
 
-- 71.60 % -- Training accuracy
-- 71.06 % -- Test accuracy
+- 68.88 % -- Training accuracy
+- 68.72 % -- Test accuracy
 
 ![image](Visualizations/Confusion_Matrix.png)
