@@ -1,59 +1,91 @@
 # Letter-Recognition-Matlab
 
-This repository compare models used to recognize letters from images via performance (training time, accuracy). 
-The models are coded from scratch in Matlab programming language.
-
 ## Dataset:
 
 - Source: https://www.nist.gov/itl/products-and-services/emnist-dataset
-
-### Data Distribution:
-
-![image](Histogram.png)
 
 ### Sample:
 
 ![image](Sample.png)
 
+### Data Distribution:
+
+![image](Train-Test.png)
+
+### Train - Val - Test Distribution:
+
+![image](Train-Val-Test.png)
+
 ## Available models:
 
 - [Perceptron:](Perceptron)
 
-| Model              |  Input Layer  | Output Layer                        | Total Parameters | No. Iterations |  Duration   | Training Accuracy | Test Accuracy |
-|--------------------|:-------------:|:-----------------------------------:|:----------------:|:--------------:|:-----------:|:-----------------:|:-------------:|
-| Perceptron_sigmoid |   784 units   |   26 units <br>  Sigmoid activation |      20,410      |       500      | ~17 minutes |      68.88 %      |    68.72 %    |
-| Perceptron_softmax |   784 units   |   26 units <br>  Softmax activation |      20,410      |       500      | ~16 minutes |      70.02 %      |    70.07 %    |
+| Model              |  Input Layer  | Output Layer                        | Total Parameters | No. Iterations | Training Accuracy | Validation Accuracy | Test Accuracy |
+|--------------------|:-------------:|:-----------------------------------:|:----------------:|:--------------:|:-----------------:|:-------------------:|:-------------:|
+| Perceptron_sigmoid |   784 units   |   26 units <br>  Sigmoid activation |      20,410      |       500      |      68.99 %      |       68.15 %       |    68.66 %    |
+| Perceptron_softmax |   784 units   |   26 units <br>  Softmax activation |      20,410      |       500      |      70.15 %      |       69.76 %       |    69.88 %    |
 
 - [Neural Network - v1:](Neural_Network_v1)
 
-| Model                   |  Input Layer  | Hidden Layer                          | Output Layer                        | Total Parameters | No. Iterations |   Duration     | Training Accuracy | Test Accuracy |
-|-------------------------|:-------------:|:-------------------------------------:|:-----------------------------------:|:----------------:|:--------------:|:--------------:|:-----------------:|:-------------:|
-| NN_sigmoid_softmax_64   |   784 units   |   64 units <br>  Sigmoid activation   |   26 units <br>  Softmax activation |      51,930      |       500      | ~18 minutes    |      68.02 %      |    67.82 %    |
-| NN_sigmoid_softmax_128  |   784 units   |   128 units <br>  Sigmoid activation  |   26 units <br>  Softmax activation |     103,834      |       500      | ~22 minutes    |      69.27 %      |    69.22 %    |
-| NN_sigmoid_softmax_256  |   784 units   |   256 units <br>  Sigmoid activation  |   26 units <br>  Softmax activation |     207,642      |       500      | ~42 minutes    |      70.14 %      |    69.87 %    |
-| NN_sigmoid_softmax_512  |   784 units   |   512 units <br>  Sigmoid activation  |   26 units <br>  Softmax activation |     415,258      |       500      | ~1h 52 minutes |      70.56 %      |    70.63 %    |
-| NN_sigmoid_softmax_1024 |   784 units   |   1024 units <br>  Sigmoid activation |   26 units <br>  Softmax activation |     830,490      |       500      | ~4h 55 minutes |      70.57 %      |    70.25 %    |
+| Model                   |  Input Layer  | Hidden Layer                           | Output Layer                        | Total Parameters | No. Iterations | Training Accuracy | Validation Accuracy | Test Accuracy |
+|-------------------------|:-------------:|:--------------------------------------:|:-----------------------------------:|:----------------:|:--------------:|:-----------------:|:-------------------:|:-------------:|
+| NN_sigmoid_softmax_64   |   784 units   |   64 units <br>  Sigmoid activation    |   26 units <br>  Softmax activation |      51,930      |       500      |      67.95 %      |      68.27 %        |    67.81 %    |
+| NN_tanh_softmax_64      |   784 units   |   64 units <br>  Tanh activation       |   26 units <br>  Softmax activation |      51,930      |       500      |      79.13 %      |      78.97 %        |    78.53 %    |
+| NN_relu_softmax_64      |   784 units   |   64 units <br>  ReLU activation       |   26 units <br>  Softmax activation |      51,930      |       500      |      82.12 %      |      81.98 %        |    81.74 %    |
+| NN_leakyrelu_softmax_64 |   784 units   |   64 units <br>  Leaky ReLU activation |   26 units <br>  Softmax activation |      51,930      |       500      |      81.64 %      |      81.91 %        |    80.96 %    |
+| NN_swish_softmax_64     |   784 units   |   64 units <br>  Swish activation      |   26 units <br>  Softmax activation |      51,930      |       500      |      81.77 %      |      80.86 %        |    80.92 %    |
+| NN_mish_softmax_64      |   784 units   |   64 units <br>  Mish activation       |   26 units <br>  Softmax activation |      51,930      |       500      |      82.31 %      |      81.85 %        |    81.75 %    |
 
 - [Neural Network - v2:](Neural_Network_v2)
 
-| Model                |  Input Layer  | Hidden Layer                       | Output Layer                        | Total Parameters | No. Iterations |   Duration     | Training Accuracy | Test Accuracy |
-|----------------------|:-------------:|:----------------------------------:|:-----------------------------------:|:----------------:|:--------------:|:--------------:|:-----------------:|:-------------:|
-| NN_relu_softmax_64   |   784 units   |   64 units <br>  ReLU activation   |   26 units <br>  Softmax activation |      51,930      |       500      | ~26 minutes    |      82.11 %      |    81.46 %    |
-| NN_relu_softmax_128  |   784 units   |   128 units <br>  ReLU activation  |   26 units <br>  Softmax activation |     103,834      |       500      | ~34 minutes    |      84.13 %      |    83.18 %    |
-| NN_relu_softmax_256  |   784 units   |   256 units <br>  ReLU activation  |   26 units <br>  Softmax activation |     207,642      |       500      | ~52 minutes    |      85.68 %      |    84.60 %    |
-| NN_relu_softmax_512  |   784 units   |   512 units <br>  ReLU activation  |   26 units <br>  Softmax activation |     415,258      |       500      | ~1h 21 minutes |      86.98 %      |    85.60 %    |
-| NN_relu_softmax_1024 |   784 units   |   1024 units <br>  ReLU activation |   26 units <br>  Softmax activation |     830,490      |       500      | ~2h 16 minutes |      88.07 %      |    86.50 %    |
+| Model                    |  Input Layer  | Hidden Layer                           | Output Layer                        | Total Parameters | No. Iterations | Training Accuracy | Validation Accuracy | Test Accuracy |
+|--------------------------|:-------------:|:--------------------------------------:|:-----------------------------------:|:----------------:|:--------------:|:-----------------:|:-------------------:|:-------------:|
+| NN_relu_softmax_128      |   784 units   |  128 units <br>  ReLU activation       |   26 units <br>  Softmax activation |     103,834      |       500      |      84.06 %      |      83.37 %        |    83.19 %    |
+| NN_leakyrelu_softmax_128 |   784 units   |  128 units <br>  Leaky ReLU activation |   26 units <br>  Softmax activation |     103,834      |       500      |      84.14 %      |      82.67 %        |    82.95 %    |
+| NN_swish_softmax_128     |   784 units   |  128 units <br>  Swish activation      |   26 units <br>  Softmax activation |     103,834      |       500      |      83.71 %      |      82.84 %        |    83.02 %    |
+| NN_mish_softmax_128      |   784 units   |  128 units <br>  Mish activation       |   26 units <br>  Softmax activation |     103,834      |       500      |      83.78 %      |      83.05 %        |    83.14 %    |
+
+- [Neural Network - v3:](Neural_Network_v3)
+
+| Model                    |  Input Layer  | Hidden Layer                           | Output Layer                        | Total Parameters | No. Iterations | Training Accuracy | Validation Accuracy | Test Accuracy |
+|--------------------------|:-------------:|:--------------------------------------:|:-----------------------------------:|:----------------:|:--------------:|:-----------------:|:-------------------:|:-------------:|
+| NN_relu_softmax_256      |   784 units   |  256 units <br>  ReLU activation       |   26 units <br>  Softmax activation |     207,642      |       500      |      85.57 %      |      85.18 %        |    84.60 %    |
+| NN_leakyrelu_softmax_256 |   784 units   |  256 units <br>  Leaky ReLU activation |   26 units <br>  Softmax activation |     207,642      |       500      |      85.37 %      |      84.70 %        |    84.15 %    |
+| NN_swish_softmax_256     |   784 units   |  256 units <br>  Swish activation      |   26 units <br>  Softmax activation |     207,642      |       500      |      84.77 %      |      83.85 %        |    83.55 %    |
+| NN_mish_softmax_256      |   784 units   |  256 units <br>  Mish activation       |   26 units <br>  Softmax activation |     207,642      |       500      |      85.16 %      |      84.43 %        |    84.30 %    |
+
+- [Neural Network - v4:](Neural_Network_v4)
+
+| Model                    |  Input Layer  | Hidden Layer                           | Output Layer                        | Total Parameters | No. Iterations | Training Accuracy | Validation Accuracy | Test Accuracy |
+|--------------------------|:-------------:|:--------------------------------------:|:-----------------------------------:|:----------------:|:--------------:|:-----------------:|:-------------------:|:-------------:|
+| NN_relu_softmax_512      |   784 units   |  512 units <br>  ReLU activation       |   26 units <br>  Softmax activation |     415,258      |       500      |      87.03 %      |      86.02 %        |    85.51 %    |
+| NN_leakyrelu_softmax_512 |   784 units   |  512 units <br>  Leaky ReLU activation |   26 units <br>  Softmax activation |     415,258      |       500      |      86.79 %      |      85.00 %        |    85.30 %    |
+| NN_swish_softmax_512     |   784 units   |  512 units <br>  Swish activation      |   26 units <br>  Softmax activation |     415,258      |       500      |      85.20 %      |      83.89 %        |    84.13 %    |
+| NN_mish_softmax_512      |   784 units   |  512 units <br>  Mish activation       |   26 units <br>  Softmax activation |     415,258      |       500      |      86.21 %      |      85.65 %        |    85.01 %    |
 
 - [Deeper Neural Network - v1:](Deeper_Neural_Network_v1)
 
-| Model                    |  Input Layer  | Hidden Layer 1                      | Hidden Layer 2                    | Output Layer                        | Total Parameters | No. Iterations |   Duration  | Training Accuracy | Test Accuracy |
-|--------------------------|:-------------:|:-----------------------------------:|:---------------------------------:|:-----------------------------------:|:----------------:|:--------------:|:-----------:|:-----------------:|:-------------:|
-| NN_relu_softmax_1024_64  |   784 units   |   1024 units <br>  ReLU activation  |   64 units <br>  ReLU activation  |   26 units <br>  Softmax activation |     871,130      |       500      | ~2h 49 minutes |      89.32 %      |    87.74 %    |
-| NN_relu_softmax_1024_128 |   784 units   |   1024 units <br>  ReLU activation  |   128 units <br>  ReLU activation |   26 units <br>  Softmax activation |     938,394      |       500      | ~2h 12 minutes |      90.19 %      |    88.42 %    |
-| NN_relu_softmax_1024_256 |   784 units   |   1024 units <br>  ReLU activation  |   256 units <br>  ReLU activation |   26 units <br>  Softmax activation |     1,072,922    |       500      | ~3h 8 minutes  |      90.53 %      |    88.44 %    |
+| Model                       |  Input Layer  | Hidden Layer 1                         | Hidden Layer 2                         | Output Layer                        | Total Parameters | No. Iterations | Training Accuracy | Validation Accuracy | Test Accuracy |
+|-----------------------------|:-------------:|:--------------------------------------:|:--------------------------------------:|:-----------------------------------:|:----------------:|:--------------:|:-----------------:|:-------------------:|:-------------:|
+| NN_relu_softmax_512_64      |   784 units   |  512 units <br>  ReLU activation       |   64 units <br>  ReLU activation       |   26 units <br>  Softmax activation |     436,442      |       500      |      88.46 %      |      86.85 %        |    86.71 %    |
+| NN_leakyrelu_softmax_512_64 |   784 units   |  512 units <br>  Leaky ReLU activation |   64 units <br>  Leaky ReLU activation |   26 units <br>  Softmax activation |     436,442      |       500      |      88.84 %      |      87.31 %        |    87.28 %    |
+| NN_swish_softmax_512_64     |   784 units   |  512 units <br>  Swish activation      |   64 units <br>  Swish activation      |   26 units <br>  Softmax activation |     436,442      |       500      |      87.58 %      |      86.68 %        |    86.42 %    |
+| NN_mish_softmax_512_64      |   784 units   |  512 units <br>  Mish activation       |   64 units <br>  Mish activation       |   26 units <br>  Softmax activation |     436,442      |       500      |      87.94 %      |      87.17 %        |    87.01 %    |
 
 - [Deeper Neural Network - v2:](Deeper_Neural_Network_v2)
 
-| Model                    |  Input Layer  | Hidden Layer 1                      | Hidden Layer 2                    | Hidden Layer 3                    | Output Layer                        | Total Parameters | No. Iterations |   Duration  | Training Accuracy | Test Accuracy |
-|--------------------------|:-------------:|:-----------------------------------:|:---------------------------------:|:---------------------------------:|:-----------------------------------:|:----------------:|:--------------:|:-----------:|:-----------------:|:-------------:|
-| NN_relu_softmax_1024_256 |   784 units   |   1024 units <br>  ReLU activation  |   256 units <br>  ReLU activation |   64 units <br>  ReLU activation  |   26 units <br>  Softmax activation |     1,084,378    |       500      | ~3h 9 minutes  |      91.08 %      |    88.99 %    |
+| Model                        |  Input Layer  | Hidden Layer 1                         | Hidden Layer 2                         | Output Layer                        | Total Parameters | No. Iterations | Training Accuracy | Validation Accuracy | Test Accuracy |
+|------------------------------|:-------------:|:--------------------------------------:|:--------------------------------------:|:-----------------------------------:|:----------------:|:--------------:|:-----------------:|:-------------------:|:-------------:|
+| NN_relu_softmax_512_128      |   784 units   |  512 units <br>  ReLU activation       |  128 units <br>  ReLU activation       |   26 units <br>  Softmax activation |     470,938      |       500      |      89.40 %      |      88.05 %        |    87.56 %    |
+| NN_leakyrelu_softmax_512_128 |   784 units   |  512 units <br>  Leaky ReLU activation |  128 units <br>  Leaky ReLU activation |   26 units <br>  Softmax activation |     470,938      |       500      |      89.25 %      |      87.36 %        |    87.65 %    |
+| NN_swish_softmax_512_128     |   784 units   |  512 units <br>  Swish activation      |  128 units <br>  Swish activation      |   26 units <br>  Softmax activation |     470,938      |       500      |      87.86 %      |      87.02 %        |    86.81 %    |
+| NN_mish_softmax_512_128      |   784 units   |  512 units <br>  Mish activation       |  128 units <br>  Mish activation       |   26 units <br>  Softmax activation |     470,938      |       500      |      88.34 %      |      87.37 %        |    87.24 %    |
+
+- [Deeper Neural Network - v3:](Deeper_Neural_Network_v3)
+
+| Model                        |  Input Layer  | Hidden Layer 1                         | Hidden Layer 2                         | Output Layer                        | Total Parameters | No. Iterations | Training Accuracy | Validation Accuracy | Test Accuracy |
+|------------------------------|:-------------:|:--------------------------------------:|:--------------------------------------:|:-----------------------------------:|:----------------:|:--------------:|:-----------------:|:-------------------:|:-------------:|
+| NN_relu_softmax_512_256      |   784 units   |  512 units <br>  ReLU activation       |  256 units <br>  ReLU activation       |   26 units <br>  Softmax activation |     539,930      |       500      |      89.98 %      |      88.10 %        |    88.29 %    |
+| NN_leakyrelu_softmax_512_256 |   784 units   |  512 units <br>  Leaky ReLU activation |  256 units <br>  Leaky ReLU activation |   26 units <br>  Softmax activation |     539,930      |       500      |      89.99 %      |      88.34 %        |    88.31 %    |
+| NN_swish_softmax_512_256     |   784 units   |  512 units <br>  Swish activation      |  256 units <br>  Swish activation      |   26 units <br>  Softmax activation |     539,930      |       500      |      87.56 %      |      86.71 %        |    86.44 %    |
+| NN_mish_softmax_512_256      |   784 units   |  512 units <br>  Mish activation       |  256 units <br>  Mish activation       |   26 units <br>  Softmax activation |     539,930      |       500      |      88.74 %      |      87.69 %        |    87.50 %    |

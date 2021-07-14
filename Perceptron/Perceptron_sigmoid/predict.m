@@ -4,7 +4,7 @@ function p = predict(Theta, X)
 m = size(X, 1);
 
 % Make predictions
-h = sigmoid([ones(m, 1) X] * Theta');
+h = sigmoid([ones(m, 1) X] * Theta', false);
 [dummy, p] = max(h, [], 2);
 
 end

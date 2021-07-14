@@ -1,5 +1,11 @@
-function g = sigmoid(z)
+function g = sigmoid(z, grad)
 
-g = 1 ./ (1 + exp(-z));
+h = 1 ./ (1 + exp(-z));
+
+if grad == false
+    g = h;
+else
+    g = h .* (1 - h);
+end
 
 end
